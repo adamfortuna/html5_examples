@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New elements</title>
+	<style>
+	<!--
+	  header, nav, footer { margin:10px 0; }
+	  header { border:2px solid green; display:block; width:960px; }
+	  nav { border:2px solid blue; display:block; width:960px; }
+	  footer { border:2px solid red; display:block; clear:both; width:960px; }
+	  
+	  article { border:2px solid orange; display:block; width:640px; float:left; }
+	  article header { border:none; width:auto; }
+	  aside { border:2px solid teal; display:block; width:320px; float:left; }
+	-->
+	</style>
+</head>
+<body>
+
+  <header>
+    <h1>New Elements in HTML 5</h1>
+    <p>This is in a header element with a green border</p>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </nav>
+  
+  <article>
+    <header>
+      <h3>Title here</h3>
+      <span>Written on <time>July 1, 2009</time> by <a href="#">Adam Fortuna</a>
+    </header>
+    <section contenteditable="true">
+      <p>Testing out some post here. <mark>Testing out some post here</mark>. Testing out some post here. Testing out some post here. Testing out some post here. Testing out some post here. Testing out some post here. Testing out some post here. Testing out some post here. Testing out some post here. Testing out some post here. Testing out some post here. Testing out some post here. Testing out some post here. Testing out some post here. Testing out some post here. Testing out some post here. Testing out some post here. Testing out some post here. Testing out some post here.</p>
+      <p>
+        <button onclick="alert(document.getSelection());">Alert selected Text</button>
+      </p>
+    </section>
+  </article>
+
+
+  <aside>
+    <h2>Sidebar</h2>
+    <section>
+      <h3>Recent Posts</h3>
+      <ul>
+        <li><a href="#">Last Post</a></li>
+        <li><a href="#">Older Post</a></li>
+        <li><a href="#">Oldest Post</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Link</h3>
+      <ul>
+        <li><a href="#">Adogo</a></li>
+        <li><a href="#">HTML 5 Spec</a></li>
+        <li><a href="#">Adobe</a></li>
+      </ul>
+    </section>
+  </aside>
+
+  <footer>
+    <p>&copy; 2009 Adogo.us</p>
+    <p>Check out the <a href="http://adogo.us">Adogo Usergroup Website</a> for more examples</p>
+  </footer>
+</body>
+</html>

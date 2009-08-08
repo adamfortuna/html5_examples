@@ -1,0 +1,34 @@
+<html>
+<head>
+  <title>Video | Basic Player</title>
+  <style type='text/css'>body {font-size: 200%;}</style>
+  <script type="text/javascript">
+    function rotateMePlease() {
+  	  i = 0;
+  	  int = setInterval(function () {document.getElementById('v1').style.MozTransform = 'rotate(' + (i++ %360) + 'deg)';}, 50);
+    }
+  </script>
+
+</head>
+<body>
+	<p>Mouse over and/or click the buttons for built-in video support</p>
+	<div id="container" style="width:768px; height:576px; border: 1px solid #000;">
+    <div style="text-align: center;">
+	    <video id="v1" src="media/birds.mkv" poster="images/birds.jpg" controls></video>
+	  </div>
+	  	
+    <div style="text-align: center;">
+   	  <button onclick="document.getElementById('v1').play()">Play</button>
+      <button onclick="document.getElementById('v1').pause()">Pause</button>
+      <button onclick="document.getElementById('v1').volume += 0.25">Volume Up</button>
+      <button onclick="document.getElementById('v1').volume -= 0.25">Volume Down</button>
+
+      <button onclick="document.getElementById('v1').muted = true;">Mute</button>
+      <button onclick="document.getElementById('v1').muted = false">Unmute</button>
+    	<button onclick="rotateMePlease();">Start Rotate</button>
+  	  <button onclick="int=window.clearInterval(int)">Stop Rotate</button></div>
+	
+  	</div>
+	<p>Source code adapted from Paul Rouget's <a href="http://people.mozilla.com/~prouget/demos/simpleVideo/video.html">sexy video demo</a>.</p>
+</body>
+</html>

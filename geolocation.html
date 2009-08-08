@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+
+    <style type="text/css"><!--
+	  body {font-size: 200%}
+    --></style>
+
+    <title>Geolocation | Where Am I?</title>
+    <script src="http://maps.google.com/maps?file=api&v=2&sensor=false&key=ABQIAAAAYmwI4fgvNCW01vLUrgXxZhTS7-lyyNbjnRI6RzhRg_ui22am0hS1oVsKfsTVQeYpka6VTkdUVxTuiA" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+var map;
+var marker;
+var positionId;
+var currentLocation;
+
+function moveMap(position) {
+
+  currentLocation = new GLatLng(position.coords.latitude, position.coords.longitude);
+
+  marker = new GMarker(new GLatLng(position.coords.latitude, position.coords.longitude));
+  GEvent.addListener(marker,"click", function() {
+	var myHtml = "You are (most likely) here-ish.";
+	map.openInfoWindowHtml(currentLocation, myHtml);
+	});
+  map.addOverlay(marker);
+  map.setZoom(15);
+  map.panTo(new GLatLng(position.coords.latitude, position.coords.longitude));
+
+}
+
+function handleError(error) {alert(error.message);}
+
+function initialize() {
+  if (GBrowserIsCompatible()) {
+    map = new GMap2(document.getElementById("map_canvas"));
+    map.setCenter(new GLatLng(37.4419, -122.1419), 13);
+    map.addControl(new GSmallMapControl());
+    positionId = navigator.geolocation.watchPosition(moveMap, handleError);
+  }
+}
+    </script>
+
+  </head>
+  <body onload="initialize()">
+	With your consent, this map will plot your approximate location.
+    <div id="map_canvas" style="width: 768px; height: 576px; border: 1px solid #000;"></div>
+  </body>
+</html>
+
